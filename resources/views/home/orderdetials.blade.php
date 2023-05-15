@@ -5,9 +5,6 @@
 
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
     @include('home.head')
 </head>
 
@@ -47,10 +44,10 @@
                         <td><strong>{{ $order->delivery_status }}</strong></td>
                         <td>
                             @if ($order->delivery_status == 'processing')
-                                <button style="background-color: red; color: white" class="normal" id="editBtn">
-                                    <a onclick="confirmation(event)"
+                                <button style="background-color: #088178;" class="normal" id="editBtn">
+                                    <a style="color: #fff;" onclick="confirmation(event)"
                                         href="{{ url('order_cencel', $order->id) }}">
-                                        Cencel
+                                        Cancel
                                     </a>
                                 </button>
                             @else
@@ -60,14 +57,8 @@
                             @endif
                         </td>
                     @empty
-                        <section>
-                            <div id="h-p">
-                                <p>Click Here to see our other <strong><em>Products!</em></strong></p>
-                            </div>
-                            <div style="margin: 30px" id="h-shop">
-                                <a href="{{ url('shop') }}">Shope</a>
-                            </div>
-                        </section>
+
+                    @include('home.shopnowbutton')
                 @endforelse
 
                 </tr>

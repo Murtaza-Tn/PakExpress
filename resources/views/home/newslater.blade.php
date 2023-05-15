@@ -3,8 +3,11 @@
       <h4>Sign Up For Newsletters</h4>
       <p>Get E-mail updates about our latest shop and <span>spcial offers.</span></p>
     </div>
-    <div class="form">
-      <input type="text" placeholder="Your email address">
-      <button class="normal">Sign Up</button>
+    <div id="form">
+        <form action="{{url('email_newsletter')}}" method="GET">
+
+            <input name="email" type="email" placeholder="Your email address">
+            <button type="submit" class="normal">Sign Up</button>
+        </form>
     </div>
   </section>

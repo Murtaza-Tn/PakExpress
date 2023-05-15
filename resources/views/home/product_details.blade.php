@@ -165,7 +165,13 @@
 
 
                   </div>
-                  <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                  <form action="{{url('add_cart', $productfeatured->id)}}" method="POST">
+                    @csrf
+                  <button><i class="fal fa-shopping-cart cart"></i></button>
+
+
+                </form>
+
                 </div>
 
                 @endforeach

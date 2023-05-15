@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
 
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
     <link rel="stylesheet" href="home/style.css">
 </head>
 
@@ -26,20 +21,13 @@
     @include('home.header')
 
     <section id="page-header" class="about-header">
-        <h2
-            style="
-          font-size: 55px;
-          line-height: 54px;
-          font-weight: 700;
-          margin-bottom: 10px;
-          ">
+        <h2>
             #let's_talk
         </h2>
-        <p style="
-          font-size:20px;
-          line-height: 20px;
-          ">LEAVE A MESSAGE, WE LOVE TO HEAR
-            FROM You!</p>
+        <p>
+            LEAVE A MESSAGE, WE LOVE TO HEAR
+            FROM You!
+        </p>
     </section>
 
 
@@ -65,6 +53,7 @@
                     <tr>
                         {{-- script message is botom and controller --}}
                         <td><a onclick="confirmation(event)" href="{{ url('delete_product', $cart->id) }}"><i
+                                    style="font-weight: 600; font-size: 20px; color: #D21312; background-color: #fff;"
                                     class="far fa-times-circle"></i></a>
                         </td>
                         <td><img src="product/{{ $cart->image1 }}" alt=""></td>
@@ -73,18 +62,20 @@
 
 
                         <td>
-                            <td>{{-- value Plus --}}
-                                <form action="{{url('incress_quantity', $cart->id)}}" method="get">
-                                <input style="display: none"  name="quantity_new" value="{{$cart->quantity}}" min="1">
-                                <input style="margin-left: 30px" type="submit" value="+">
-                                </form></td>
+                            <div id="quantity-wrapper">
 
-                            <td>                        {{-- Value Minus --}}
+                                                   {{-- Value Minus --}}
                                 <form action="{{url('dec_quantity', $cart->id)}}" method="get">
-                                    <input style="width: 50px" type="number"  name="quantity_new" value="{{$cart->quantity}}" min="1">
-                                    <input style="margin-right: 80px" type="submit" value="-">
-                                </form></td>
+                                    <input style="display: none" type="number" name="quantity_new" value="{{$cart->quantity}}" min="1" >
+                                    <input type="submit" value="-" class="ip-submit" style="margin-left: 50px; margin-right: 2px;">
+                                </form>
 
+                                {{-- value Plus --}}
+                                <form action="{{url('incress_quantity', $cart->id)}}" method="get">
+                                    <input style=""  name="quantity_new" value="{{$cart->quantity}}" min="1" id="cart-ip-show">
+                                    <input type="submit" value="+" class="ip-submit">
+                                    </form>
+                            </div>
 
                         </td>
                         <td>${{ $cart->price }}</td>
@@ -95,14 +86,7 @@
                     ?>
 
                 @empty
-                    <section>
-                        <div id="h-p">
-                            <p>Click Here to see our other <strong><em>Products!</em></strong></p>
-                        </div>
-                        <div style="margin: 30px" id="h-shop">
-                            <a href="{{ url('shop') }}">Shope</a>
-                        </div>
-                    </section>
+
                 @endforelse
 
             </tbody>
@@ -168,9 +152,13 @@
 
 
 
-            <a href="{{ url('cash_order', $totalprice) }}">
+            {{-- <a href="{{ url('cash_order', $totalprice) }}">
                 <button style="margin-left: 80px" class="normal">Cash On Delivery</button>
 
+            </a> --}}
+
+            <a href="{{ url('mobile_verification_order', ['id' => $id, 'totalprice' => $totalprice]) }}">
+                <button class="normal" id="editBtn">Cash On Delivery</button>
             </a>
             <a href="{{ url('stripe', $totalprice) }}">
                 <button style="margin-left: 50px; background-color: #F15A59" class="normal ">Pay Using Card</button>
@@ -182,6 +170,7 @@
         </div>
     </section>
 
+    @include('home.shopnowbutton')
 
 
 

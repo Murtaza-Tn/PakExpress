@@ -5,13 +5,12 @@
 
         @include('home.head')
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     </head>
 
     <body>
 
 
+        @include('sweetalert::alert')
 
         @include('home.header')
 
@@ -49,16 +48,8 @@
             {!!$blog->withQueryString()->links('pagination::bootstrap-5')!!}
         </span>
 
-        <section id="newsletter" class="section-p1 section-m1">
-          <div class="newstext">
-            <h4>Sign Up For Newsletters</h4>
-            <p>Get E-mail updates about our latest shop and <span>spcial offers.</span></p>
-          </div>
-          <div class="form">
-            <input type="text" placeholder="Your email address">
-            <button class="normal">Sign Up</button>
-          </div>
-        </section>
+
+        @include('home.newslater')
 
 
         @include('home.footer')

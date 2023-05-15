@@ -89,6 +89,9 @@ Route::get('delete_product/{id}', [HomeController::class, 'delete_product']);
 
 Route::get('cash_order/{totalprice}', [HomeController::class, 'cash_order']);
 
+Route::get('cash_order_order/{userid}/{totalprice}', [HomeController::class, 'cash_order_order']);
+
+
 Route::get('stripe/{totalprice}', [HomeController::class, 'stripe']);
 
 Route::post('stripe/{totalprice}', [HomeController::class, 'stripePost'])
@@ -152,8 +155,13 @@ Route::post('sms', [HomeController::class, 'smssend']);
 
 Route::get('/mobile_verification/{id}', [HomeController::class, 'otpsend']);
 
+Route::get('/mobile_verification_order/{id}/{totalprice}', [HomeController::class, 'otpsend_order']);
+
+
 
 Route::get('Verify_num_save/{id}', [HomeController::class, 'Verify_num_save']);
+
+
 
 Route::get('email_newsletter', [HomeController::class, 'email_newsletter']);
 

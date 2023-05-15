@@ -38,15 +38,6 @@
         {{-- End body images --}}
 
 
-        {{-- Banner --}}
-
-
-        @include('home.banner')
-
-        {{-- End Banner --}}
-
-
-
         {{-- body images --}}
         @include('home.body2')
 
@@ -54,27 +45,7 @@
 
 
                 {{-- Button --}}
-                <section>
-                    <div id="h-p">
-                      <p>Click Here to see our other <strong><em>Products!</em></strong></p>
-                    </div>
-                    <div id="h-shop">
-                      <a href="{{url('shop')}}">Shope</a>
-                    </div>
-                  </section>
-
-
-
-        {{-- Crazy Deal --}}
-
-        @include('home.crazydeal')
-
-        {{-- End Crazy Deal --}}
-
-
-        {{-- Seasonal Sale --}}
-        @include('home.seasonalsale')
-        {{-- End Seasonal Sale --}}
+                @include('home.shopnowbutton')
 
 
 
