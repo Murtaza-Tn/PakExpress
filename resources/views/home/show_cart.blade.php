@@ -124,7 +124,7 @@
                 <button class="normal" id="editBtn">Edit Address</button>
             </a>
             <a href="{{ url('mobile_verification', $id) }}">
-                <button class="normal" id="editBtn">Phone Number Verify</button>
+                <button class="normal" >Phone Number Verify</button>
             </a>
         </div>
 
@@ -158,10 +158,10 @@
             </a> --}}
 
             <a href="{{ url('mobile_verification_order', ['id' => $id, 'totalprice' => $totalprice]) }}">
-                <button class="normal" id="editBtn">Cash On Delivery</button>
+                <button class="normal" >Cash On Delivery</button>
             </a>
             <a href="{{ url('stripe', $totalprice) }}">
-                <button style="margin-left: 50px; background-color: #F15A59" class="normal ">Pay Using Card</button>
+                <button style="background-color: #F15A59" class="normal ">Pay Using Card</button>
             </a>
 
 

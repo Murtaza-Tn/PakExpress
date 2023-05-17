@@ -15,13 +15,13 @@
 <body>
     @include('home.header')
 
-    <div class="container">
-        <h1>Verify Your Number And Save</h1>
+    <div class="container" style="width: 50%">
+        <h1 style="margin-top: 20px; text-align: center; font-size: 30px; font-weight: 600;">Verify Your Number And Save</h1>
 
-        <div class="alert alert-danger" id="error" style="display: none;"></div>
+        <div class="alert alert-danger" id="error" style="display: none; width: 300px"></div>
 
         <div class="card">
-            <div class="card-header">
+            <div style="text-align: center; font-weight:600;" class="card-header">
                 Enter Phone Number
             </div>
             <div class="card-body">
@@ -29,18 +29,18 @@
                 <div class="alert alert-success" id="sentSuccess" style="display: none;"></div>
 
                 <form>
-                    <label>Phone Number:</label>
-                    <input type="text" id="number" class="form-control" value="{{ $phone }}"
+                    <label style="text-align: center; font-Weight: 600">Phone Number:</label>
+                    <input type="text" id="number" style="width: 300px;" class="form-control" value="{{ $phone }}"
                         placeholder="+91********">
                     <div id="recaptcha-container"></div>
-                    <button type="button" class="btn btn-success" style="color: black"
+                    <button type="button" class="btn btn-success" style="color: #fff"
                         onclick="phoneSendAuth();">SendCode</button>
                 </form>
             </div>
         </div>
 
         <div class="card" style="margin-top: 10px">
-            <div class="card-header">
+            <div style="text-align: center; font-weight:600;" class="card-header">
                 Enter Verification code
             </div>
             <div class="card-body">
@@ -48,32 +48,38 @@
                 <div class="alert alert-success" id="successRegsiter" style="display: none;"></div>
 
                 <form>
-                    <input type="text" id="verificationCode" class="form-control"
+                    <input style="width: 300px;" type="text" id="verificationCode" class="form-control"
                         placeholder="Enter verification code">
-                    <button type="button" class="btn btn-success" style="color: black" onclick="codeverify();">Verify
+                    <button type="button" class="btn btn-success" style="color: #fff" onclick="codeverify();">Verify
                         code</button>
 
                 </form>
             </div>
         </div>
-        <div style="padding: 30px;">
+
+
+
+        <div class="card" style="margin-top: 10px; margin-bottom: 30px">
+            <div style="text-align: center; font-weight:600;" class="card-header">
+                Verify Your Number Save It
+            </div>
+        <div class="card-body">
             <form action="{{ url('Verify_num_save', $userid) }}">
                 @csrf
-                <label for="">Your Verify Number Save It</label>
                 <input style="display: none" type="text" name="phone" id="NumResult">
-                <div style="border: 1px solid #000;">
+                <div style="border: 1px solid #000; width: 300px;" class="form-control">
 
-                    <p id="numR"></p>
+                    <p style="" id="numR"></p>
 
                 </div>
-                <input style="color: black" type="submit" class="btn btn-success" value="Save">
+                <input style="color: #fff" type="submit" class="btn btn-success" value="Save">
             </form>
         </div>
+    </div>
 
     </div>
 
 
-    @include('home.footer')
 
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
 

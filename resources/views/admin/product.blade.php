@@ -16,6 +16,8 @@
         {
             text-align: center;
             padding-top: 40px;
+            margin-top: 100px;
+            margin-bottom: 50px;
         }
         .h1_font
         {
@@ -64,7 +66,7 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button type="submit" class="normal">Logout</button>
                     </form>
             </div>
         </div>
@@ -138,10 +140,10 @@
 
 
                         <div class="div_design">
-                            <input type="submit" value="Add Product" class="btn btn-primary">
+                            <input style="width:100px; padding-bottom:5px;" type="submit" value="Add Product" class="btn btn-primary">
                         </div>
                     </form>
-                    <a class="btn btn-success" href="{{url('show_product')}}">Show Products</a>
+                    <a class="a-links btn btn-success" href="{{url('show_product')}}">Show Products</a>
 
                 </div>
 

@@ -78,7 +78,7 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button class="normal" type="submit">Logout</button>
                     </form>
             </div>
         </div>
@@ -124,14 +124,20 @@
 
 
                 <td>
-                    <a class="btn btn-info" href="{{url('featured_detials', $product->id)}}">View</a>
+                    <a style="border-radius: 3px;
+                    background-color: #088178;
+                    color: #fff;" class="btn btn-info" href="{{url('featured_detials', $product->id)}}">View</a>
                 </td>
 
                 <td>
-                    <a onclick="return confirm('Are You Sure To Delete This')" class="btn btn-danger" href="{{url('featured_delete_product',$product->id)}}">Delete</a>
+                    <a style="border-radius: 3px;
+                    background-color: #088178;
+                    color: #fff;" onclick="return confirm('Are You Sure To Delete This')" class="btn btn-danger" href="{{url('featured_delete_product',$product->id)}}">Delete</a>
                 </td>
                 <td>
-                    <a class="btn btn-success" href="{{url('featured_update_product',$product->id)}}">Edit</a>
+                    <a style="border-radius: 3px;
+                    background-color: #088178;
+                    color: #fff;" class="btn btn-success" href="{{url('featured_update_product',$product->id)}}">Edit</a>
                 </td>
             </tr>
             @empty
@@ -149,15 +155,6 @@
 
 
     </section>
-
-
-
-
-
-
-
-
-
 
     <script src="/admin1/adminscript.js"></script>
 

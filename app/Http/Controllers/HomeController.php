@@ -552,6 +552,8 @@ class HomeController extends Controller
 
 
 
+        Alert::success('Payment successful!', 'Thank You.');
+
         Session::flash('success', 'Payment successful!');
 
         return back();
@@ -704,7 +706,7 @@ class HomeController extends Controller
                 $cart->save();
             }
         }
-        return redirect()->back();
+        return redirect('show_cart');
     }
 
 

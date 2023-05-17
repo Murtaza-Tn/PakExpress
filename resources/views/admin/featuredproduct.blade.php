@@ -64,7 +64,7 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button class="normal" type="submit">Logout</button>
                     </form>
             </div>
         </div>
@@ -136,7 +136,10 @@
                     <input type="submit" value="Add Product" class="btn btn-primary">
                 </div>
             </form>
-            <a class="btn btn-success" href="{{url('show_featured_product')}}">Show Products</a>
+            <a style="border-radius: 3px;
+            background-color: #088178;
+            color: #fff;
+            border: 5px solid #088178;" class="btn btn-success" href="{{url('show_featured_product')}}">Show Products</a>
 
         </div>
 

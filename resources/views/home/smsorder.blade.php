@@ -13,18 +13,15 @@
 </head>
 
 <body>
-    @include('sweetalert::alert')
     @include('home.header')
 
-    <div class="container">
-        <h2>Verify Your Mobile Number And Confirm Order</h2>
-        <br>
-        <h4>Total Price: ${{$totalprice}}</h4>
+    <div class="container" style="width: 50%">
+        <h1 style="margin-top: 20px; text-align: center; font-size: 30px; font-weight: 600;">Verify Your Number And Save</h1>
 
         <div class="alert alert-danger" id="error" style="display: none;"></div>
 
         <div class="card">
-            <div class="card-header">
+            <div style="text-align: center; font-weight:600;" class="card-header">
                 Enter Phone Number
             </div>
             <div class="card-body">
@@ -32,18 +29,18 @@
                 <div class="alert alert-success" id="sentSuccess" style="display: none;"></div>
 
                 <form>
-                    <label>Phone Number:</label>
-                    <input type="text" id="number" class="form-control" value="{{ $phone }}"
+                    <label style="text-align: center; font-Weight: 600">Phone Number:</label>
+                    <input type="text" id="number" style="width: 300px;" class="form-control" value="{{ $phone }}"
                         placeholder="+91********">
                     <div id="recaptcha-container"></div>
-                    <button type="button" class="btn btn-success" style="color: black"
+                    <button type="button" class="btn btn-success" style="color: #fff"
                         onclick="phoneSendAuth();">SendCode</button>
                 </form>
             </div>
         </div>
 
         <div class="card" style="margin-top: 10px">
-            <div class="card-header">
+            <div style="text-align: center; font-weight:600;" class="card-header">
                 Enter Verification code
             </div>
             <div class="card-body">
@@ -51,9 +48,9 @@
                 <div class="alert alert-success" id="successRegsiter" style="display: none;"></div>
 
                 <form>
-                    <input type="text" id="verificationCode" class="form-control"
+                    <input style="width: 300px;" type="text" id="verificationCode" class="form-control"
                         placeholder="Enter verification code">
-                    <button type="button" class="btn btn-success" style="color: black" onclick="codeverify();">Verify
+                    <button type="button" class="btn btn-success" style="color: #fff" onclick="codeverify();">Verify
                         code</button>
 
                 </form>
@@ -61,31 +58,30 @@
         </div>
 
 
+        <div class="card" style="margin-top: 10px">
+            <div style="text-align: center; font-weight:600;" class="card-header">
+                Enter Verification code
+            </div>
+            <div class="card-body">
         <form action="{{url('cash_order_order', ['userid' => $userid, 'totalprice' => $totalprice])}}">
 
             @csrf
                 <label for="">Your Number is verified Confirm Your</label>
                 <input style="display: none" type="text" name="phonenum" id="NumResult">
-                <div style="border: 1px solid #000;">
+                <div style="border: 1px solid #000; width:300px" class="form-control">
 
                     <p id="numR"></p>
 
                 </div>
 
-                <input style="color: black" type="submit" class="btn btn-success" value="Confirm Order">
+                <input style="color: #fff" type="submit" class="btn btn-success" value="Confirm Order">
 
         </form>
-                {{-- <a href="{{ url('cash_order_order', ['id' => $id, 'totalprice' => $totalprice]) }}">
-
-                <a href="{{ url('cash_order', $totalprice) }}">
-                <button style="margin-left: 80px" class="normal">Order Confirm</button>
-
-            </a> --}}
-
     </div>
+</div>
+</div>
 
 
-    @include('home.footer')
 
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
 

@@ -88,7 +88,7 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button class="normal" type="submit">Logout</button>
                     </form>
             </div>
         </div>
@@ -147,7 +147,7 @@
                             <td style="padding: 3px; border: 2px solid  rgb(28, 135, 162);">{{$message->subject}}</td>
                             <td style="padding: 3px; border: 2px solid  rgb(28, 135, 162);">{{$message->message}}</td>
                             <td style="padding: 3px; border: 2px solid  rgb(28, 135, 162);">
-                                <a href="{{url('message_delete', $message->id)}}" class="btn btn-danger">Delete</a>
+                            <a class="a-links" href="{{url('message_delete', $message->id)}}" class="btn btn-danger">Delete</a>
                                 </td>
                         @empty
                             <div>

@@ -64,7 +64,7 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button class="normal" type="submit">Logout</button>
                     </form>
             </div>
         </div>
@@ -74,7 +74,7 @@
 
 
 
-        <div class="div_center">
+        <div style="margin-top: 100px" class="div_center">
             <h1 class="h1_font" style="margin: 30px">Add Blog Data</h1>
             <form action="{{url('add_blog_update')}}" method="POST" enctype="multipart/form-data">
 
@@ -112,7 +112,7 @@
                     <input type="submit" value="Add Product" class="btn btn-primary">
                 </div>
             </form>
-            <a class="btn btn-success" href="{{url('show_blog')}}">Show Blog Data And Delete</a>
+            <a class="a-links btn btn-success" href="{{url('show_blog')}}">Show Blog Data And Delete</a>
 
         </div>
 
@@ -120,14 +120,6 @@
 
 
     </section>
-
-
-
-
-
-
-
-
 
 
     <script src="/admin1/adminscript.js"></script>

@@ -14,7 +14,11 @@
     <div class="center">
       </div>
       <div class="popup">
-        <div class="close-btn" id="clsBtn"><i style="font-size:24px" class="fa" >&#xf057;</i></div>
+        <div class="close-btn" id="clsBtn">
+            <a href="{{url('show_cart')}}">
+            <i style="font-size:24px" class="fa" >&#xf057;</i>
+        </a>
+        </div>
         <div class="form">
             <form action="{{url('address_update', $userid)}}" enctype="multipart/form-data">
                 @csrf

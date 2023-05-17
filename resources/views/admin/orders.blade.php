@@ -87,7 +87,7 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button class="normal" type="submit">Logout</button>
                     </form>
             </div>
         </div>
@@ -188,7 +188,7 @@
                             <td>
                                 @if ($product->delivery_status == 'processing')
 
-                                <a class="btn btn-success" href="{{url('delivered', $product->id)}}">
+                                <a class="a-links btn btn-success" href="{{url('delivered', $product->id)}}">
 
                                     Delivered
                                 </a>
@@ -200,14 +200,14 @@
                             </td>
                             <td style="padding: 3px; border: 2px solid  rgb(28, 135, 162);">
 
-                                <a class="btn btn-info" href="{{url('print_pdf', $product->id)}}">
+                                <a class="a-links btn btn-info" href="{{url('print_pdf', $product->id)}}">
 
                                     Print
                                 </a>
                             </td>
 
                             <td style="padding: 3px; border: 2px solid  rgb(28, 135, 162);">
-                                <a href="{{url('delete_order', $product->id)}}" class="btn btn-danger">Delete</a>
+                                <a class="a-links" href="{{url('delete_order', $product->id)}}" class="btn btn-danger">Delete</a>
                                 </td>
                             @empty
                             <div>

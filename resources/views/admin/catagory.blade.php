@@ -61,18 +61,13 @@
                 <i class="far fa-bell"></i>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button class="normal" type="submit">Logout</button>
                     </form>
             </div>
         </div>
 
 
-
-
-
-
-
-        <div class="main-panel">
+        <div style="margin-top: 100px;" class="main-panel">
             <div class="content-wrapper">
 
                 @if (session()->has('message'))
@@ -108,7 +103,8 @@
                     <tr>
                         <td>{{$data->catagory_name}}</td>
                         <td>
-                            <a onclick="return confirm('Are You Sure To Delete This')" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
+                            <a style="background-color: #088178;
+                            color: #fff;" onclick="return confirm('Are You Sure To Delete This')" class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a>
                         </td>
                     </tr>
                     @endforeach
